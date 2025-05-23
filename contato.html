@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movabots - Contato</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contato.css">
+    <!-- Leaflet CSS para o mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+
+<body>
+    <div class="particles" id="particles"></div>
+
+    <header class="header">
+        <a href="index.html" class="logo">MOVABOTS</a>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="solucoes.html" class="nav-link">Soluções</a></li>
+                <li><a href="contato.html" class="nav-link active">Contato</a></li>
+            </ul>
+        </nav>
+        <a href="login.html" class="login-btn">ACESSAR</a>
+    </header>
+
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <h1 class="hero-title">Fale <span>Conosco</span></h1>
+            <p class="hero-subtitle">Tire suas dúvidas, solicite um orçamento ou envie sua sugestão. Nossa equipe está
+                pronta para ajudar!</p>
+            <div class="cta-buttons">
+                <a href="#contact-form" class="cta-btn primary">Enviar Mensagem</a>
+                <a href="#contact-info" class="cta-btn secondary">Nossos Contatos</a>
+            </div>
+        </div>
+        <div class="contact-hero-image">
+            <img src="assets/images/contact-image.png" alt="Contato Movabots" class="bot-illustration">
+        </div>
+    </section>
+
+    <section id="contact-form" class="contact-form-section">
+        <div class="contact-form-container">
+            <div class="form-header">
+                <h2>Envie sua mensagem</h2>
+                <p>Preencha o formulário abaixo e entraremos em contato o mais rápido possível</p>
+            </div>
+
+            <form class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Nome completo</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Assunto</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-tag"></i>
+                        <input type="text" id="subject" name="subject" placeholder="Qual o assunto?" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mensagem</label>
+                    <div class="input-with-icon mess">
+                        <i class="fas fa-comment-dots"></i>
+                        <textarea id="message" name="message" rows="5" placeholder="Escreva sua mensagem aqui..."
+                            required></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="contact-submit-btn">
+                    <span class="btn-text">Enviar Mensagem</span>
+                    <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <section id="contact-info" class="contact-info-section">
+        <div class="contact-info-container">
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Endereço</h3>
+                <p>Av. Paulista, 1000<br>São Paulo - SP, 01310-100</p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3>Telefone</h3>
+                <p>(11) 1234-5678<br>(11) 98765-4321</p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>E-mail</h3>
+                <p>contato@movabots.com<br>suporte@movabots.com</p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Horário</h3>
+                <p>Segunda a Sexta<br>9:00 às 18:00</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-map-section">
+        <div id="map"></div>
+        <div class="map-overlay">
+            <h3>Nosso Escritório</h3>
+            <p>Visite nossa sede durante o horário comercial</p>
+            <a href="https://maps.google.com" target="_blank" class="map-cta">Ver no Google Maps <i
+                    class="fas fa-external-link-alt"></i></a>
+        </div>
+    </section>
+
+    <section class="contact-cta">
+        <div class="cta-container">
+            <h2>Precisa de ajuda imediata?</h2>
+            <p>Nossa equipe de suporte está disponível para te ajudar</p>
+            <div class="cta-buttons">
+                <a href="mailto:suporte@movabots.com" class="cta-btn primary"><i class="fas fa-envelope"></i> Enviar
+                    E-mail</a>
+                <a href="tel:+551112345678" class="cta-btn secondary"><i class="fas fa-phone-alt"></i> Ligar Agora</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">MOVABOTS</div>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Termos</a>
+                <a href="#" class="footer-link">Privacidade</a>
+                <a href="contato.html" class="footer-link">Contato</a>
+                <a href="#" class="footer-link">Documentação</a>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS para o mapa -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/contato.js"></script>
+</body>
+
+</html>
