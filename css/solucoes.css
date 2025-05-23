@@ -1,16 +1,22 @@
-/* Solutions Hero */
+/* Animação para o solutions-hero */
 .solutions-hero {
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 6rem 5%;
     min-height: 80vh;
+    position: relative;
+    overflow: hidden;
     background: radial-gradient(circle at 70% 50%, rgba(123, 97, 255, 0.1) 0%, transparent 50%);
 }
 
 .solutions-hero-content {
     flex: 1;
     max-width: 600px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
 }
 
 .solutions-hero-image {
@@ -20,6 +26,22 @@
     align-items: center;
     max-width: 600px;
     position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out 0.2s;
+}
+
+.solutions-hero-image .bot-illustration {
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+    filter: drop-shadow(0 0 20px rgba(123, 97, 255, 0.3));
+    transition: var(--transition-slow);
+}
+
+.solutions-hero-image:hover .bot-illustration {
+    transform: translateY(-10px);
+    filter: drop-shadow(0 10px 30px rgba(123, 97, 255, 0.5));
 }
 
 .solutions-hero-image::after {
@@ -31,8 +53,8 @@
     border-radius: 50%;
     filter: blur(100px);
     z-index: -1;
-    opacity: 0.2;
-    animation: pulse 8s infinite alternate;
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
 }
 
 /* Solutions Section */

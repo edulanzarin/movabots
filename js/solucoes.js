@@ -64,4 +64,22 @@ document.addEventListener('DOMContentLoaded', function () {
             card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(-10px)';
         });
     });
+
+    // Animação de aparecimento do hero
+    const animateHeroOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    // Para solutions.js, use:
+    document.querySelectorAll('.solutions-hero-content, .solutions-hero-image').forEach(el => {
+        el.style.opacity = 0;
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease-out';
+        animateHeroOnScroll.observe(el);
+    });
 });
