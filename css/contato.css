@@ -231,7 +231,6 @@
 }
 
 .info-card:hover {
-    transform: translateY(-5px);
     box-shadow: var(--neon-glow);
     border-color: rgba(123, 97, 255, 0.3);
 }
