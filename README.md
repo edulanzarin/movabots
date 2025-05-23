@@ -1,7 +1,7 @@
 # 🚀 Movabots - Bots Inteligentes para Telegram
 
 <div align="center">
-  <img src="https://via.placeholder.com/800x400/7c3aed/ffffff?text=Movabots+Platform" alt="Movabots Banner">
+  <!-- <img src="https://via.placeholder.com/800x400/7c3aed/ffffff?text=Movabots+Platform" alt="Movabots Banner"> -->
   
   [![GitHub license](https://img.shields.io/github/license/seu-usuario/movabots?color=7c3aed)](LICENSE)
   [![GitHub stars](https://img.shields.io/github/stars/seu-usuario/movabots?color=7c3aed)](https://github.com/seu-usuario/movabots/stargazers)
@@ -19,10 +19,10 @@ Movabots é uma solução completa para automatização de processos no Telegram
 - 🛒 Sistemas de e-commerce integrados
 - 📢 Ferramentas de divulgação automatizada
 
-<div align="center">
+<!-- <div align="center">
   <img src="https://via.placeholder.com/600x300/7c3aed/ffffff?text=Interface+Modern" alt="Interface" width="45%">
   <img src="https://via.placeholder.com/600x300/8b5cf6/ffffff?text=Dashboard+Elegante" alt="Dashboard" width="45%">
-</div>
+</div> -->
 
 ## 🛠 Tecnologias Utilizadas
 
@@ -34,7 +34,6 @@ Movabots é uma solução completa para automatização de processos no Telegram
 
 ### Design
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
-![Adobe XD](https://img.shields.io/badge/Adobe%20XD-470137?style=for-the-badge&logo=Adobe%20XD&logoColor=#FF61F6)
 
 ## 🌟 Recursos Principais
 
@@ -43,10 +42,10 @@ Movabots é uma solução completa para automatização de processos no Telegram
 | **Automação Inteligente** | Bots que automatizam tarefas repetitivas com eficiência |
 | **Chatbots IA** | Atendimento 24/7 com processamento de linguagem natural |
 | **E-commerce** | Solução completa de vendas dentro do Telegram |
-| **Análise de Dados** | Relatórios detalhados e métricas de desempenho |
-| **Painel Administrativo** | Controle total sobre seus bots |
+| **Marketing** | Divulgação inteligente para impulsionar seu negócio |
+| **Painel Administrativo (ADIÇÃO FUTURA)** | Controle total sobre seus bots |
 
-## 🖥 Demonstração
+<!-- ## 🖥 Demonstração
 
 Confira nossa demonstração online: [demo.movabots.com](https://demo.movabots.com)
 
@@ -54,4 +53,4 @@ Confira nossa demonstração online: [demo.movabots.com](https://demo.movabots.c
 # Ou execute localmente:
 git clone https://github.com/seu-usuario/movabots.git
 cd movabots
-open index.html
+open index.html -->
