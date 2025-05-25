@@ -1,47 +1,93 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Inicialização do mapa
-    const map = L.map('map').setView([-23.5632, -46.6544], 15);
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    const urlParams = new URLSearchParams(window.location.search);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    // Verifica se veio de um redirecionamento de sucesso
+    if (urlParams.has('success')) {
+        showSuccessMessage();
+    }
 
-    // Marcador personalizado
-    const customIcon = L.divIcon({
-        html: '<i class="fas fa-map-marker-alt"></i>',
-        iconSize: [40, 40],
-        iconAnchor: [20, 40],
-        className: 'map-marker-icon'
-    });
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
 
-    L.marker([-23.5632, -46.6544], { icon: customIcon }).addTo(map)
-        .bindPopup('Movabots<br>Av. Paulista, 1000')
-        .openPopup();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnIcon = submitBtn.querySelector('.btn-icon i');
 
-    // Adicionando estilo ao marcador
-    const style = document.createElement('style');
-    style.textContent = `
-        .map-marker-icon {
-            color: var(--primary);
-            font-size: 2rem;
-            text-shadow: 0 0 10px rgba(123, 97, 255, 0.7);
-            transform: translateY(-20px);
-        }
-        
-        .leaflet-popup-content {
-            color: var(--dark);
-            font-family: 'Lexend Deca', sans-serif;
-        }
-        
-        .leaflet-popup-content-wrapper {
-            border-radius: 8px;
-        }
-    `;
-    document.head.appendChild(style);
+            // Mostrar estado de carregamento
+            btnText.textContent = 'Enviando...';
+            btnIcon.classList.remove('fa-paper-plane');
+            btnIcon.classList.add('fa-spinner', 'fa-spin');
+            submitBtn.disabled = true;
+
+            // Coletar dados do formulário
+            const formData = new FormData(this);
+
+            // Enviar para o FormSubmit
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // Mostrar mensagem de sucesso
+                        showSuccessMessage();
+                        contactForm.reset();
+
+                        // Atualizar botão para estado de sucesso
+                        btnText.textContent = 'Mensagem Enviada!';
+                        btnIcon.classList.remove('fa-spinner', 'fa-spin');
+                        btnIcon.classList.add('fa-check');
+
+                        // Resetar botão após 3 segundos
+                        setTimeout(() => {
+                            btnText.textContent = 'Enviar Mensagem';
+                            btnIcon.classList.remove('fa-check');
+                            btnIcon.classList.add('fa-paper-plane');
+                            submitBtn.disabled = false;
+                        }, 3000);
+                    } else {
+                        throw new Error('Erro no envio');
+                    }
+                })
+                .catch(error => {
+                    // Mostrar mensagem de erro
+                    alert('Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.');
+                    console.error('Error:', error);
+
+                    // Resetar botão imediatamente em caso de erro
+                    btnText.textContent = 'Enviar Mensagem';
+                    btnIcon.classList.remove('fa-spinner', 'fa-spin');
+                    btnIcon.classList.add('fa-paper-plane');
+                    submitBtn.disabled = false;
+                });
+        });
+    }
+
+    function showSuccessMessage() {
+        if (!successMessage) return;
+
+        successMessage.classList.remove('hidden');
+
+        // Rolagem suave para a mensagem
+        successMessage.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+
+        // Esconder após alguns segundos
+        setTimeout(() => {
+            successMessage.classList.add('hidden');
+        }, 10000);
+    }
 
     // Animação dos cards de informação
     const infoCards = document.querySelectorAll('.info-card');
-
     const animateOnScroll = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -57,55 +103,6 @@ document.addEventListener('DOMContentLoaded', function () {
         card.style.transition = 'all 0.6s ease-out';
         animateOnScroll.observe(card);
     });
-
-    // Validação do formulário
-    const contactForm = document.querySelector('.contact-form');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const btnIcon = submitBtn.querySelector('.btn-icon i');
-
-            // Simular envio
-            btnText.textContent = 'Enviando...';
-            btnIcon.classList.remove('fa-paper-plane');
-            btnIcon.classList.add('fa-spinner', 'fa-spin');
-            submitBtn.disabled = true;
-
-            // Simular resposta após 2 segundos
-            setTimeout(() => {
-                btnText.textContent = 'Mensagem Enviada!';
-                btnIcon.classList.remove('fa-spinner', 'fa-spin');
-                btnIcon.classList.add('fa-check');
-
-                // Resetar formulário após 3 segundos
-                setTimeout(() => {
-                    this.reset();
-                    btnText.textContent = 'Enviar Mensagem';
-                    btnIcon.classList.remove('fa-check');
-                    btnIcon.classList.add('fa-paper-plane');
-                    submitBtn.disabled = false;
-
-                    // Mostrar mensagem de sucesso
-                    const successMsg = document.createElement('div');
-                    successMsg.className = 'form-success';
-                    successMsg.innerHTML = `
-                        <i class="fas fa-check-circle"></i>
-                        <p>Sua mensagem foi enviada com sucesso! Entraremos em contato em breve.</p>
-                    `;
-                    this.appendChild(successMsg);
-
-                    // Remover mensagem após 5 segundos
-                    setTimeout(() => {
-                        successMsg.remove();
-                    }, 5000);
-                }, 3000);
-            }, 2000);
-        });
-    }
 
     // Animação de aparecimento do hero
     const animateHeroOnScroll = new IntersectionObserver((entries) => {
