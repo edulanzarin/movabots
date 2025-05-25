@@ -13,8 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const solutionCards = document.querySelectorAll('.solution-demo-card');
     solutionCards.forEach((card, index) => {
         card.style.opacity = 0;
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = `all 0.6s ease-out ${index * 0.1}s`;
         animateOnScroll.observe(card);
     });
 
@@ -28,14 +26,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     heroImage.style.opacity = 0;
     heroImage.style.transform = 'translateY(20px)';
-    heroImage.style.transition = 'all 0.6s ease-out 0.2s';
+    heroImage.style.transition = 'all 0.6s ease-out';
 
     setTimeout(() => {
         heroContent.style.opacity = 1;
         heroContent.style.transform = 'translateY(0)';
         heroImage.style.opacity = 1;
         heroImage.style.transform = 'translateY(0)';
-    }, 300);
+    }, 50);
 
     // Animar barras de métricas quando visíveis
     const metricBars = document.querySelectorAll('.metric-bar');
