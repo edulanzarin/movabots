@@ -20,7 +20,7 @@ Movabots é uma solução completa para automatização de processos no Telegram
 - 📢 Ferramentas de divulgação automatizada
 
 ## 🌐 Acesse o site
-Confira nosso site em produção: [https://movabots.com](https://movabots.com)
+Confira nosso site em produção: [https://movabots.com.br](https://movabots.com.br)
 
 <!-- <div align="center">
   <img src="https://via.placeholder.com/600x300/7c3aed/ffffff?text=Interface+Modern" alt="Interface" width="45%">
