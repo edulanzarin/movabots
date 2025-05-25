@@ -631,7 +631,7 @@ body {
     pointer-events: none;
 }
 
-.solutions-cta {
+.index-cta {
     padding: 6rem 5%;
     text-align: center;
     background: radial-gradient(circle at 50% 50%, rgba(123, 97, 255, 0.1) 0%, transparent 70%);
