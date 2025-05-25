@@ -787,7 +787,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="promo-body">
                         <img src="assets/images/${promo.image}" alt="${promo.title}" class="promo-image">
                         <p>${promo.content}</p>
-                        <a href="${promo.link}" class="promo-button">Saiba mais</a>
+                        <a class="promo-button">Saiba mais</a>
                     </div>
                 </div>
             `;

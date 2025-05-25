@@ -449,7 +449,6 @@
 }
 
 .message-input i.fa-paper-plane {
-    margin-left: 10px;
     color: var(--primary);
     font-size: 1.2rem;
 }

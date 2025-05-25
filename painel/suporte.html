@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte - Movabots</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/painel.css">
+    <link rel="stylesheet" href="css/suporte.css">
+</head>
+
+<body>
+    <!-- Menu de Navegação -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span>MOVABOTS</span>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="solicitar.html"><i class="fas fa-plus-circle"></i> <span
+                                class="menu-text">Solicitar</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="meus-bots.html"><i class="fas fa-robot"></i> <span class="menu-text">Meus
+                                Bots</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="suporte.html">
+                            <i class="fas fa-headset"></i>
+                            <span class="menu-text">Suporte</span>
+                            <span class="notification-dot"></span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="user-nav">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="user-name">Usuário</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>Suporte Técnico</h1>
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="attendant-info">
+                    <div class="attendant-avatar">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div>
+                        <h3>Suporte Movabots</h3>
+                        <p>Geralmente responde em 10 minutos</p>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <!-- Mensagens serão inseridas aqui pelo JavaScript -->
+            </div>
+
+            <div class="chat-input">
+                <textarea id="message-input" placeholder="Digite sua mensagem..." rows="1"></textarea>
+                <button id="send-message" class="btn-primary">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/notification.js"></script>
+    <script src="js/suporte.js"></script>
+</body>
+
+</html>

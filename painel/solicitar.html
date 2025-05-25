@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Bot - Movabots</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/painel.css">
+    <link rel="stylesheet" href="css/solicitar.css">
+</head>
+
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span>MOVABOTS</span>
+            </div>
+
+            <!-- Botão do menu mobile -->
+            <button class="mobile-menu-toggle" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="nav-item active">
+                        <a href="solicitar.html"><i class="fas fa-plus-circle"></i> <span
+                                class="menu-text">Solicitar</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="meus-bots.html"><i class="fas fa-robot"></i> <span class="menu-text">Meus
+                                Bots</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="suporte.html">
+                            <i class="fas fa-headset"></i>
+                            <span class="menu-text">Suporte</span>
+                            <span class="notification-dot"></span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="user-nav">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="user-name">Usuário</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Painel de Solicitação de Bots</h1>
+            </div>
+
+            <div class="panel-container">
+                <div class="bot-configurator">
+                    <h2>Configure seu bot personalizado</h2>
+
+                    <div class="form-group">
+                        <label for="bot-name">Nome do Bot <span>(será necessário verificar
+                                disponibilidade)</span></label>
+                        <input type="text" id="bot-name" class="form-control" placeholder="Ex: MeuBotDeVendas">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tipo de Bot</label>
+                        <div class="bot-type-options">
+                            <div class="bot-type-option" data-type="automacao">
+                                <i class="fas fa-robot"></i>
+                                <h3>Bot de Automação</h3>
+                                <p>Automatize tarefas repetitivas</p>
+                            </div>
+                            <div class="bot-type-option" data-type="vendas">
+                                <i class="fas fa-shopping-cart"></i>
+                                <h3>Bot de Vendas</h3>
+                                <p>Automatize vendas e atendimento</p>
+                            </div>
+                            <div class="bot-type-option" data-type="chatbot">
+                                <i class="fas fa-comments"></i>
+                                <h3>ChatBot</h3>
+                                <p>Atendimento automático inteligente</p>
+                            </div>
+                            <div class="bot-type-option" data-type="divulgacao">
+                                <i class="fas fa-bullhorn"></i>
+                                <h3>Bot de Divulgação</h3>
+                                <p>Divulgue produtos e serviços</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Container dinâmico para funcionalidades específicas -->
+                    <div id="specific-features-container">
+                        <!-- As funcionalidades serão carregadas aqui conforme o tipo selecionado -->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bot-description">Descrição do Projeto</label>
+                        <textarea id="bot-description" class="form-control" rows="4"
+                            placeholder="Descreva com mais detalhes o que você precisa..."></textarea>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <h2>Resumo do Pedido</h2>
+
+                    <div class="order-summary">
+                        <div id="base-price" class="order-item">
+                            <!-- Preço base será inserido aqui -->
+                        </div>
+
+                        <div id="features-summary">
+                            <!-- Itens serão adicionados dinamicamente -->
+                        </div>
+                    </div>
+
+                    <div class="price" id="total-price">
+                        <!-- Total será calculado aqui -->
+                    </div>
+
+                    <button class="btn" id="submit-order">
+                        <i class="fas fa-paper-plane"></i> Solicitar Bot
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/main.js"></script>
+        <script src="js/notification.js"></script>
+        <script src="js/solicitar.js"></script>
+    </body>
+
+</html>

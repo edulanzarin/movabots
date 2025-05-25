@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Bots - Movabots</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/painel.css">
+    <link rel="stylesheet" href="css/meus-bots.css">
+</head>
+
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span>MOVABOTS</span>
+            </div>
+
+            <!-- Botão do menu mobile -->
+            <button class="mobile-menu-toggle" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="solicitar.html"><i class="fas fa-plus-circle"></i> <span
+                                class="menu-text">Solicitar</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="meus-bots.html"><i class="fas fa-robot"></i> <span class="menu-text">Meus
+                                Bots</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="suporte.html">
+                            <i class="fas fa-headset"></i>
+                            <span class="menu-text">Suporte</span>
+                            <span class="notification-dot"></span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="user-nav">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="user-name">Usuário</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="header">
+            <h1>Meus Bots</h1>
+        </div>
+
+        <!-- Lista de Bots -->
+        <div class="bots-grid">
+            <!-- Bot 1 -->
+            <div class="bot-card status-active payment-ok">
+                <div class="bot-header">
+                    <div class="bot-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="bot-info">
+                        <h3>Vendas Express</h3>
+                        <span class="bot-type">Bot de Vendas</span>
+                    </div>
+                    <div class="bot-status">
+                        <span class="status-badge active">Ativo</span>
+                        <span class="payment-badge ok">Pagamento em dia</span>
+                    </div>
+                </div>
+                <div class="bot-details">
+                    <div class="detail-item">
+                        <span>Criado em:</span>
+                        <strong>15/03/2023</strong>
+                    </div>
+                    <div class="detail-item">
+                        <span>Próximo pagamento:</span>
+                        <strong>15/06/2023</strong>
+                    </div>
+                </div>
+                <div class="bot-actions">
+                    <button class="btn-action">
+                        <i class="fas fa-cog"></i> Configurar
+                    </button>
+                    <button class="btn-action">
+                        <i class="fas fa-chart-line"></i> Estatísticas
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bot 2 -->
+            <div class="bot-card status-inactive payment-pending">
+                <div class="bot-header">
+                    <div class="bot-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="bot-info">
+                        <h3>Atendente Virtual</h3>
+                        <span class="bot-type">ChatBot</span>
+                    </div>
+                    <div class="bot-status">
+                        <span class="status-badge inactive">Inativo</span>
+                        <span class="payment-badge pending">Pagamento pendente</span>
+                    </div>
+                </div>
+                <div class="bot-details">
+                    <div class="detail-item">
+                        <span>Criado em:</span>
+                        <strong>10/02/2023</strong>
+                    </div>
+                    <div class="detail-item">
+                        <span>Vencimento:</span>
+                        <strong>10/05/2023</strong>
+                    </div>
+                </div>
+                <div class="bot-actions">
+                    <button class="btn-action">
+                        <i class="fas fa-sync-alt"></i> Reativar
+                    </button>
+                    <button class="btn-action">
+                        <i class="fas fa-trash-alt"></i> Remover
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bot 3 a 5 (similares) -->
+            <!-- ... -->
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/meus-bots.js"></script>
+</body>
+
+</html>
