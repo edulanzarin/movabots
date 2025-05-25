@@ -631,6 +631,39 @@ body {
     pointer-events: none;
 }
 
+.solutions-cta {
+    padding: 6rem 5%;
+    text-align: center;
+    background: radial-gradient(circle at 50% 50%, rgba(123, 97, 255, 0.1) 0%, transparent 70%);
+}
+
+.cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, var(--light), var(--gray));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.cta-container p {
+    color: var(--gray);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Responsividade */
 @media (max-width: 992px) {
     .hero {
